@@ -1,0 +1,12 @@
+- name: small-datacenter-1      #informational only
+  address: dc1.example.com      #can be DNS hostname or IP
+  pools: [www-example]          #pools to be included in--must be a list, even for singletons
+  weight: 2                     #from 0 to 10, 0 is disabled
+- name: big-datacenter
+  address: 1.1.1.1
+  pools: [www-example, www-otherexample]
+  weight: 5
+- name: small-datacenter-2
+  address: example.dynamicdnsprovider.com
+  pools: [www-otherexample]
+  weight: 1

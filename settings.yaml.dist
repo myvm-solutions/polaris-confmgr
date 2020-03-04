@@ -1,0 +1,53 @@
+#
+# polaris-confmgr configuration
+#
+
+settings:
+    version: 0.1
+    output_file: polaris-lb.yaml
+    #output_file: /opt/polaris/etc/polaris-lb.yaml
+    interval: 60                    #minimum time in seconds between DNS lookups/config updates
+    resolver_ip: 127.0.0.1          #not yet implemented, will use local system 'socket' lookups
+
+pools:
+    www-example:
+        monitor: http
+        monitor_params:
+            interval: 5
+            timeout: 2
+            retries: 2
+            use_ssl: true
+            hostname: www.example.com
+            url_path: /healthcheck?check_all=true
+        lb_method: wrr 
+        fallback: refuse
+        members:
+
+    www-otherexample:
+        monitor: http
+        monitor_params:
+            interval: 5
+            timeout: 2
+            retries: 2
+            use_ssl: true
+            hostname: www.otherexample.com
+            url_path: /healthcheck?check_all=true
+        lb_method: wrr 
+        fallback: refuse
+        members:
+
+globalnames:
+    www.example.com:
+        pool: www-example
+        ttl: 1
+    example.com:
+        pool: www-example
+        ttl: 1
+    www.otherexample.com:
+        pool: www-otherexample
+        ttl: 1
+    otherexample.com:
+        pool: www-otherexample
+        ttl: 1
+
+
