@@ -22,11 +22,12 @@ that can dynamically grow with the environment.
 - pyyaml
 - DeepDiff (preferrably also with MurmurHash3)
 
-From the [DeepDiff](https://deepdiff.readthedocs.io/en/latest/) documentation: 
-"DeepDiff prefers to use Murmur3 for hashing...Otherwise DeepDiff will be using 
-SHA256 for hashing which is a cryptographic hash and is considerably slower." 
+Note: From the [DeepDiff](https://deepdiff.readthedocs.io/en/latest/) documentation: 
+_"DeepDiff prefers to use Murmur3 for hashing... Otherwise DeepDiff will be using 
+SHA256 for hashing which is a cryptographic hash and is considerably slower."_
 Therefore, the recommended installation includes a build environment with gcc 
-and additional header files.
+and additional headers required for mmh3.
+
 
 #### CentOS 7 minimal dependencies installation example
 ```
@@ -54,7 +55,7 @@ settings.yaml and data.yaml, respectively. Edit both files as necessary.
 Run polaris-confmgr.py, which will load the settings and data files, and generate 
 the polaris-lb.yaml file based on DNS resolution of all members in the data file. 
 polaris-confmgr will then wait for the specified interval (default is 60 seconds), 
-update the data file, and resolve DNS again for each member. The settings file is 
+reload the data file, and resolve DNS again for each member. The settings file is 
 only updated if there is a change to the active members or the DNS resolution.
 
 Members that fail DNS resolution will not be included in the final output.
