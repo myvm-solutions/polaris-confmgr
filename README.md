@@ -41,12 +41,10 @@ pip3.4 install 'deepdiff[murmur]'
 ```
 
 ### Configuration
-The polaris-confmgr config is closely tied to polaris-gslb load-balancer config 
-file (polaris-lb.yaml), with a couple additional settings. Additionally, the 'members' 
-section is moved to a separate file for more flexibility.
+The polaris-confmgr config is closely tied to polaris-gslb [LB configuration](https://github.com/polaris-gslb/polaris-gslb/wiki/LB-configuration) file (polaris-lb.yaml), with a couple additional settings. Also, the 'members' section is moved to a separate file for more flexibility.
 
-Clone the repository and copy the files settings.yaml.dist and data.yaml.dist to 
-settings.yaml and data.yaml, respectively. Edit both files as necessary.
+Clone the repository and copy the file settings.yaml.dist to settings.yaml, 
+and data.yaml.dist to data.yaml. Edit both files as necessary.
 
 Run polaris-confmgr.py, which will load the settings and data files, and generate 
 the polaris-lb.yaml file based on DNS resolution of all members in the data file. 
