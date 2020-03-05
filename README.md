@@ -39,8 +39,8 @@ pip3.4 install deepdiff
 #### CentOS 7 recommended installation example:
 ```
 yum groupinstall 'Development Tools'
-yum install -y epel-release python34-devel
-yum install -y python34 python34-pip python34-PyYAML
+yum install -y epel-release
+yum install -y python34 python34-devel python34-pip python34-PyYAML
 pip3.4 install 'deepdiff[murmur]'
 ```
 
