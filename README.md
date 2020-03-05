@@ -22,11 +22,7 @@ that can dynamically grow with the environment.
 - pyyaml
 - DeepDiff (preferrably also with MurmurHash3)
 
-Note: From the [DeepDiff](https://deepdiff.readthedocs.io/en/latest/) documentation: 
-_"DeepDiff prefers to use Murmur3 for hashing... Otherwise DeepDiff will be using 
-SHA256 for hashing which is a cryptographic hash and is considerably slower."_
-Therefore, the recommended installation includes a build environment with gcc 
-and additional headers required for mmh3.
+Performance note: polaris-confmgr uses [DeepDiff](https://deepdiff.readthedocs.io/en/latest/) to monitor changes in the output file. From the DeepDiff documentation: _"DeepDiff prefers to use Murmur3 for hashing ... Otherwise DeepDiff will be using SHA256 for hashing which is a cryptographic hash and is considerably slower."_ With a small member list, the hashing function will likely be trivial, but as the output grows, a slow hash could have some impact _(testing needed here)_. Therefore, the recommended installation includes a build environment with gcc and additional headers required for mmh3.
 
 
 #### CentOS 7 minimal installation example:
@@ -40,7 +36,7 @@ pip3.4 install deepdiff
 ```
 yum groupinstall 'Development Tools'
 yum install -y epel-release
-yum install -y python34 python34-devel python34-pip python34-PyYAML
+yum install -y python34 python34-pip python34-PyYAML python34-devel
 pip3.4 install 'deepdiff[murmur]'
 ```
 
