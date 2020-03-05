@@ -25,7 +25,8 @@ that can dynamically grow with the environment.
 From the [DeepDiff](https://deepdiff.readthedocs.io/en/latest/) documentation: 
 "DeepDiff prefers to use Murmur3 for hashing...Otherwise DeepDiff will be using 
 SHA256 for hashing which is a cryptographic hash and is considerably slower." 
-Therefore, the recommended installation includes gcc and additional header files.
+Therefore, the recommended installation includes a build environment with gcc 
+and additional header files.
 
 #### CentOS 7 minimal dependencies installation example
 ```
