@@ -3,14 +3,14 @@
 
 At the most basic level, this project can be considered a DNS resolver backend
 for [polaris-gslb](https://github.com/polaris-gslb/polaris-gslb), which in turn 
-is a backend for [PowerDNS](https://www.powerdns.com/auth.html). By default, polaris-gslb 
-only supports static IPs, but polaris-confmgr allows for DNS resolution of the backend 
-servers, including dynamic-DNS hosts. However, the true power of this tool comes from 
-its ability to add and remove members on the fly, allowing for a fault-tolerant pool 
-that can dynamically grow with the environment.
+is a backend for [PowerDNS](https://www.powerdns.com/auth.html). Typically, polaris-gslb 
+only supports static configuration, but polaris-confmgr allows for dynamic creation of the 
+config, including DNS resolution of the backend servers. However, the true power of this 
+tool comes from its ability to add and remove members on the fly, allowing for a fault-tolerant 
+pool that can also dynamically grow with the environment.
 
 * Continuosly monitors GSLB members for IP changes in DNS
-* Dynamically updates member list before each status check
+* Dynamically refreshes member list for each update cycle
 * Supports static IPs as well as dynamic DNS entries
 * Allows any member to join multiple server pools
 
