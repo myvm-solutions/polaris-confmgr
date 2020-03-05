@@ -29,14 +29,14 @@ Therefore, the recommended installation includes a build environment with gcc
 and additional headers required for mmh3.
 
 
-#### CentOS 7 minimal dependencies installation example
+#### CentOS 7 minimal installation example:
 ```
 yum install -y epel-release
 yum install -y python34 python34-pip python34-PyYAML
 pip3.4 install deepdiff
 ```
 
-#### CentOS 7 recommended dependencies installation example
+#### CentOS 7 recommended installation example:
 ```
 yum groupinstall 'Development Tools'
 yum install -y epel-release python34-devel
