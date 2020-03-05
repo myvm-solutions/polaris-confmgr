@@ -1,5 +1,5 @@
 # polaris-confmgr
-##### Dynamic configuration generator for polaris-gslb
+#### Dynamic configuration generator for polaris-gslb
 
 At the most basic level, this project can be considered a DNS resolver backend
 for [polaris-gslb](https://github.com/polaris-gslb/polaris-gslb), which in turn 
