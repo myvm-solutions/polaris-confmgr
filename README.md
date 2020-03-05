@@ -22,7 +22,7 @@ pool that can also dynamically grow with the environment.
 - pyyaml
 - DeepDiff (preferrably also with MurmurHash3)
 
-Performance note: polaris-confmgr uses [DeepDiff](https://deepdiff.readthedocs.io/en/latest/) to monitor changes in the output file. From the DeepDiff documentation: _"DeepDiff prefers to use Murmur3 for hashing ... Otherwise DeepDiff will be using SHA256 for hashing which is a cryptographic hash and is considerably slower."_ With a small member list, the hashing function will likely be trivial, but as the output grows, a slow hash could have some impact _(testing needed here)_. Therefore, the recommended installation includes a build environment with gcc and additional headers required for mmh3.
+Performance note: polaris-confmgr uses [DeepDiff](https://deepdiff.readthedocs.io/en/latest/) to monitor changes in the config output. From the DeepDiff documentation: _"DeepDiff prefers to use Murmur3 for hashing ... Otherwise DeepDiff will be using SHA256 for hashing which is a cryptographic hash and is considerably slower."_ With a small member list, the hashing function will likely be trivial, but as the output grows, a slow hash could have some impact _(testing needed here)_. Therefore, the recommended installation includes a build environment with gcc and additional headers required for mmh3.
 
 
 #### CentOS 7 minimal installation example:
