@@ -1,5 +1,5 @@
 # polaris-confmgr
-##### Dynamic configuration generator for polaris-gslb
+#### Dynamic configuration generator for polaris-gslb
 
 At the most basic level, this project can be considered a DNS resolver backend
 for [polaris-gslb](https://github.com/polaris-gslb/polaris-gslb), which in turn 
@@ -25,7 +25,8 @@ that can dynamically grow with the environment.
 From the [DeepDiff](https://deepdiff.readthedocs.io/en/latest/) documentation: 
 "DeepDiff prefers to use Murmur3 for hashing...Otherwise DeepDiff will be using 
 SHA256 for hashing which is a cryptographic hash and is considerably slower." 
-Therefore, the recommended installation includes gcc and additional header files.
+Therefore, the recommended installation includes a build environment with gcc 
+and additional header files.
 
 #### CentOS 7 minimal dependencies installation example
 ```
@@ -57,4 +58,3 @@ update the data file, and resolve DNS again for each member. The settings file i
 only updated if there is a change to the active members or the DNS resolution.
 
 Members that fail DNS resolution will not be included in the final output.
-
