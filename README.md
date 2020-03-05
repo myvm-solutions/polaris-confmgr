@@ -58,4 +58,3 @@ update the data file, and resolve DNS again for each member. The settings file i
 only updated if there is a change to the active members or the DNS resolution.
 
 Members that fail DNS resolution will not be included in the final output.
-
